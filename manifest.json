@@ -1,0 +1,14 @@
+{
+  "name": "Devdocs Link Opener",
+  "description": "Context menu opens devdocs links from code.",
+  "version": "0.1",
+  "background": {
+     "scripts": ["background.js"],
+     "persistent": true
+   },
+  "permissions": ["tabs", "contextMenus"],
+  "browser_action": {
+      "name": "Open context menu"
+  },
+  "manifest_version": 2
+}
