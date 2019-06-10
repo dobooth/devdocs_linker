@@ -13,6 +13,7 @@ function openDevdocs(selectedText){
   }
   var theurl = baseurl+selectedText;
   window.open(theurl, '_blank');
+  //Need to reset the var after each use.
   baseurl = "http://devdocs.magento.com";
 }
 

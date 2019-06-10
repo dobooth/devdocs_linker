@@ -1,6 +1,6 @@
 {
   "name": "Devdocs Link Opener",
-  "description": "Context menu opens devdocs links from code.",
+  "description": "Opens devdocs links from code selection.",
   "version": "0.1",
   "background": {
      "scripts": ["background.js"],
