@@ -1,6 +1,6 @@
 # Devdocs Linker
 
-This is a Chrome extension that opens relative devdoc links in a new browser tab.
+This is a Chrome extension that opens relative Devdoc/Merchdoc links in a new browser tab.
 
 It looks at a selected string and if it is recognized as a devdocs link, you can use the "Open in Devdocs" context menu to open the link.
 
@@ -35,6 +35,10 @@ Test your extension with these sample strings.
 - A file reference in a [Github files PR tab](https://github.com/magento/devdocs/pull/4715/files):
 
       guides/v2.1/javascript-dev-guide/widgets/jquery-widgets-about.md
+
+- Merchdoc paths start with `src`.
+
+      src/configuration/advanced.md
 
 - `{{ site.baseurl}}/path/to/file.md` paths found in source code:
 
