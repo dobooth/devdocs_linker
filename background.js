@@ -1,6 +1,8 @@
 var baseurl = "http://devdocs.magento.com";
+var basemerch = "https://docs.magento.com/m2/ce/user_guide"
 
-function openDevdocs(selectedText){
+//md is a flag for merchdocs, which has a different base url
+function openDevdocs(selectedText, md=0){
   //Handle selection having leading slash or not
   var slashed = selectedText.charAt(0);
   if ( slashed != '/') {
@@ -12,9 +14,13 @@ function openDevdocs(selectedText){
     selectedText = selectedText.replace(".md",".html");
   }
   var theurl = baseurl+selectedText;
+  if(md == 1){
+    theurl = basemerch+selectedText;
+  }
   window.open(theurl, '_blank');
   //Need to reset the var after each use.
   baseurl = "http://devdocs.magento.com";
+  basemerch = "https://docs.magento.com/m2/ce/user_guide"
 }
 
 function checkPath(info, tab){
@@ -24,6 +30,14 @@ function checkPath(info, tab){
   if(pass){
     openDevdocs(selectedText)
   }
+  else if (/^\/?(src).*(\.(html|md))/.test(selectedText)){
+    //if for src/ merchdocs
+    selectedText = info.selectionText.toString().trim();
+    selectedText = selectedText.replace('src', '');
+    var pass = /^\/?(src).*(\.(html|md))/.test(selectedText);
+    openDevdocs(selectedText, 1)
+
+ }
   //Handle {{site.baseurl}}
   else if (/({{\s*?site.baseurl\s*?}}).*(.(html|md))/.test(selectedText)){
     var reg = /({{\s*?site.baseurl\s*?}})/;
@@ -43,7 +57,7 @@ function checkPath(info, tab){
     window.open(selectedText, '_blank');
   }
   else{
-    alert("Check selection: (/)guides/*.html(.md) and {{ site | page.baseurl | mage2bloburl }}/.(xml|(p)html|js|php)");
+    alert("Check selection: (/)guides|src/*.html(.md) and {{ site|page.baseurl|mage2bloburl }}/.(xml|(p)html|js|php)");
 
   }
 }
