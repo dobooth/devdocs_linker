@@ -39,13 +39,13 @@ function checkPath(info, tab){
 
  }
   //Handle {{site.baseurl}}
-  else if (/({{\s*?site.baseurl\s*?}}).*(.(html|md|png|jpg))/.test(selectedText)){
+  else if (/({{\s*?site.baseurl\s*?}}).*(.(html|md))/.test(selectedText)){
     var reg = /({{\s*?site.baseurl\s*?}})/;
     var selectedText = selectedText.replace(reg, '');
     openDevdocs(selectedText)
   }
   //Handle {{page.baseurl}}. Assume v2.3
-  else if (/({{\s*?page.baseurl\s*?}}).*(.(html|md|png|jpg))/.test(selectedText)){
+  else if (/({{\s*?page.baseurl\s*?}}).*(.(html|md))/.test(selectedText)){
     var reg = /({{\s*?page.baseurl\s*?}})/;
     var selectedText = selectedText.replace(reg, 'guides/v2.3');
     openDevdocs(selectedText)
