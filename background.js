@@ -24,10 +24,12 @@ function openDevdocs(selectedText, md=0){
 }
 
 function checkPath(info, tab){
-  //If it starting with guides, slash or not
+  //If it contains cotains 'guides', slash or not
   var selectedText = info.selectionText.toString().trim();
-  var pass = /^\/?(guides).*(\.(html|md))/.test(selectedText);
+  var pass = selectedText.includes("guides");
   if(pass){
+    // stript src from devdocs links
+    selectedText = selectedText.replace("src","");
     openDevdocs(selectedText)
   }
   else if (/^\/?(src).*(\.(html|md))/.test(selectedText)){
@@ -36,8 +38,7 @@ function checkPath(info, tab){
     selectedText = selectedText.replace('src', '');
     var pass = /^\/?(src).*(\.(html|md))/.test(selectedText);
     openDevdocs(selectedText, 1)
-
- }
+  }
   //Handle {{site.baseurl}}
   else if (/({{\s*?site.baseurl\s*?}}).*(.(html|md))/.test(selectedText)){
     var reg = /({{\s*?site.baseurl\s*?}})/;
@@ -64,7 +65,7 @@ function checkPath(info, tab){
 
 chrome.contextMenus.create({
   "id": "devdocs",
-  "title": "Open in Devdocs",
+  "title": "Open in Devdocs/Merchdocs(ce only)",
   "type": "normal",
   "contexts": ["selection"],
 });
