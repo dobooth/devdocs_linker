@@ -34,7 +34,7 @@ Test your extension with these sample strings.
 
 - A file reference in a [Github files PR tab](https://github.com/magento/devdocs/pull/4715/files):
 
-      guides/v2.1/javascript-dev-guide/widgets/jquery-widgets-about.md
+      src/guides/v2.1/javascript-dev-guide/widgets/jquery-widgets-about.md
 
 - Merchdoc paths start with `src`.
 
