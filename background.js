@@ -32,7 +32,7 @@ function checkPath(info, tab){
     selectedText = selectedText.replace("src","");
     openDevdocs(selectedText)
   }
-  else if (/^\/?(src)(\/cloud\/|\/codelinks\/|\/community\/|\/compliance\/|\/contributor-guide\/|\/extensions\/|\/marketplace\/|\/quality-patches\/|\/recommendations\/|\/release\/|\/schemas\/|\/security\/).*(\.(html|md))/.test(selectedText)){
+  else if (/^\/?(src)?(\/cloud\/|\/codelinks\/|\/community\/|\/compliance\/|\/contributor-guide\/|\/extensions\/|\/marketplace\/|\/quality-patches\/|\/recommendations\/|\/release\/|\/schemas\/|\/security\/).*(\.(html|md))/.test(selectedText)){
     //if for devdocs not guides
     selectedText = info.selectionText.toString().trim();
     selectedText = selectedText.replace('src', '');
