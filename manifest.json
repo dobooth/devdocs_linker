@@ -1,7 +1,7 @@
 {
-  "name": "Devdocs Link Opener",
-  "description": "Opens devdocs links from code selection.",
-  "version": "0.1",
+  "name": "Devdocs/Merchdocs Link Opener",
+  "description": "Opens Magento docs links from code selection.",
+  "version": "0.2",
   "background": {
      "scripts": ["background.js"],
      "persistent": true
