@@ -44,11 +44,11 @@ Test your extension with these sample strings.
 
       {{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html
 
-- `{{ page.baseurl }}` paths in source code. Defaults to v2.3:
+- `{{ page.baseurl }}` paths in source code. Defaults to v2.4:
 
       {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 
-- `{{ site.mage2bloburl }}` will always default to v2.3:
+- `{{ site.mage2bloburl }}` will always default to v2.4:
 
       {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php
 
