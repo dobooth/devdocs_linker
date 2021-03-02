@@ -24,7 +24,8 @@ function openDevdocs(selectedText, md=0){
 }
 
 function checkPath(info, tab){
-  if(info) {
+  // This if ensures we don't run this function if doing the @magento function
+  if(info.editable == false) {
   //If it contains cotains 'guides', slash or not
   var selectedText = info.selectionText.toString().trim();
   var pass = selectedText.includes("guides");
