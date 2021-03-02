@@ -1,11 +1,20 @@
 {
   "name": "Devdocs/Merchdocs Link Opener",
-  "description": "Opens Magento docs links from code selection.",
-  "version": "0.2",
+  "description": "Opens Magento docs links from code selection. Also adds @magento import statements.",
+  "version": "0.3",
   "background": {
      "scripts": ["background.js"],
      "persistent": true
    },
+   "content_scripts": [
+    {
+    "matches": [
+        "http://*/*",
+        "https://*/*"
+        ],
+    "js": ["content.js"]
+    }
+], 
   "permissions": ["tabs", "contextMenus"],
   "browser_action": {
       "name": "Open context menu"

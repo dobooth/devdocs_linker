@@ -24,6 +24,7 @@ function openDevdocs(selectedText, md=0){
 }
 
 function checkPath(info, tab){
+  if(info) {
   //If it contains cotains 'guides', slash or not
   var selectedText = info.selectionText.toString().trim();
   var pass = selectedText.includes("guides");
@@ -69,6 +70,14 @@ function checkPath(info, tab){
 
   }
 }
+}
+
+function pasteImport(){
+chrome.tabs.query({ active: true }, function(tabs) {
+  const msg = "Hello from bgfunction 🔥";
+  chrome.tabs.sendMessage(tabs[0].id, { "message": msg });
+})
+}
 
 chrome.contextMenus.create({
   "id": "devdocs",
@@ -77,4 +86,12 @@ chrome.contextMenus.create({
   "contexts": ["selection"],
 });
 
+chrome.contextMenus.create({
+  "id": "import",
+  "title": "@magento import",
+  "type": "normal",
+  "contexts": ["editable"],
+});
+
 chrome.contextMenus.onClicked.addListener(checkPath);
+chrome.contextMenus.onClicked.addListener(pasteImport);
