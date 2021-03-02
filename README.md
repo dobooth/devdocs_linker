@@ -17,7 +17,7 @@ The 'Devdocs Link Opener' should show in your extension list.
 ## Recognized strings
 
 We look for text selections that can be construed to be Devdocs/Merchdocs links.
-For instance: a selection that start with `src/guides` (with or without the inital slash) and ends in either `.md` or `.html`.
+For instance: a selection that start with `src/guides` (with or without the initial slash) and ends in either `.md` or `.html`.
 
 We also look for `{{ site | page | mage2bloburl }}` strings that end in `.php`, `.phtml`, `.html`, `.xml` and `.js`.
 
@@ -51,3 +51,8 @@ Test your extension with these sample strings.
 - `{{ site.mage2bloburl }}` will always default to v2.3:
 
       {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php
+
+## @magento
+
+To assist in importing code, a "@magento import" context menu will appear when in the "New Comment" text area in a Github PR page.
+Selecting this menu will add `@magento import code to magento-devdocs/devdocs` to the text area.
