@@ -41,7 +41,7 @@ function checkPath(info, tab){
     var pass = /^\/?(src).*(\.(html|md))/.test(selectedText);
     openDevdocs(selectedText)
   }
-  else if (/^\/?(src)(\/catalog\/|\/cms\/|\/configuration\/|\/customers\/|\/design\/|\/getting-started\/|\/images\/|\/magento\/|\/marketing\/|\/mcom\/|\/payment\/|\/quick-tour\/|\/reports\/|\/sales-channels\/|\/sales\/|\/shipping\/|\/stores\/|\/system\/|\/tax\/).*(\.(html|md))/.test(selectedText)){
+  else if (/(^\/?(src))?(\/catalog\/|\/cms\/|\/configuration\/|\/customers\/|\/design\/|\/getting-started\/|\/images\/|\/magento\/|\/marketing\/|\/mcom\/|\/payment\/|\/quick-tour\/|\/reports\/|\/sales-channels\/|\/sales\/|\/shipping\/|\/stores\/|\/system\/|\/tax\/).*(\.(html|md))/.test(selectedText)){
     //if for src/ merchdocs
     selectedText = info.selectionText.toString().trim();
     selectedText = selectedText.replace('src', '');
