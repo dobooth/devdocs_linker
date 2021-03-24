@@ -55,4 +55,10 @@ Test your extension with these sample strings.
 ## @magento
 
 To assist in importing code, a "@magento import" context menu will appear when in the "New Comment" text area in a Github PR page.
-Selecting this menu will add `@magento import code to magento-devdocs/devdocs` to the text area.
+There are options for devdocs and merchdocs.
+Selecting this menu, you can add either:
+
+- `@magento import code to magento-devdocs/devdocs` 
+- `@magento import code to magento-devdocs/merchdocs` 
+
+to the text area.

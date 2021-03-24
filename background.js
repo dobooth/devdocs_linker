@@ -88,8 +88,15 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-  "id": "import",
-  "title": "@magento import",
+  "id": "importdd",
+  "title": "@magento import devdocs",
+  "type": "normal",
+  "contexts": ["editable"],
+});
+
+chrome.contextMenus.create({
+  "id": "importmd",
+  "title": "@magento import merchdocs",
   "type": "normal",
   "contexts": ["editable"],
 });
