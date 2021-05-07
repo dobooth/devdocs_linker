@@ -73,13 +73,6 @@ function checkPath(info, tab){
 }
 }
 
-function pasteImport(){
-chrome.tabs.query({ active: true }, function(tabs) {
-  const msg = "Hello from bgfunction 🔥";
-  chrome.tabs.sendMessage(tabs[0].id, { "message": msg });
-})
-}
-
 chrome.contextMenus.create({
   "id": "devdocs",
   "title": "Open in Devdocs/Merchdocs",
@@ -102,4 +95,19 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.onClicked.addListener(checkPath);
-chrome.contextMenus.onClicked.addListener(pasteImport);
+chrome.contextMenus.onClicked.addListener(function(info, tabs) {
+  if (tabs) {
+      if (info.menuItemId === "importdd"){
+          chrome.tabs.query({ active: true }, function(tabs) {
+            const msg = "dd";
+            chrome.tabs.sendMessage(tabs[0].id, { "message": msg });    
+          })
+      }
+      if (info.menuItemId === "importmd"){
+        chrome.tabs.query({ active: true }, function(tabs) {
+          const msg = "md";
+          chrome.tabs.sendMessage(tabs[0].id, { "message": msg });    
+        })
+      }
+  }
+});

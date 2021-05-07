@@ -15,7 +15,7 @@
     "js": ["content.js"]
     }
 ], 
-  "permissions": ["tabs", "contextMenus"],
+  "permissions": ["tabs", "contextMenus", "https://*/"],
   "browser_action": {
       "name": "Open context menu"
   },
