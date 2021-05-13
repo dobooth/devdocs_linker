@@ -81,15 +81,29 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-  "id": "importdd",
-  "title": "@magento import devdocs",
+  "id": "importddcode",
+  "title": "@magento import code devdocs",
   "type": "normal",
   "contexts": ["editable"],
 });
 
 chrome.contextMenus.create({
-  "id": "importmd",
-  "title": "@magento import merchdocs",
+  "id": "importddpr",
+  "title": "@magento import pr devdocs",
+  "type": "normal",
+  "contexts": ["editable"],
+});
+
+chrome.contextMenus.create({
+  "id": "importmdcode",
+  "title": "@magento import code merchdocs",
+  "type": "normal",
+  "contexts": ["editable"],
+});
+
+chrome.contextMenus.create({
+  "id": "importmdpr",
+  "title": "@magento import pr merchdocs",
   "type": "normal",
   "contexts": ["editable"],
 });
@@ -97,17 +111,29 @@ chrome.contextMenus.create({
 chrome.contextMenus.onClicked.addListener(checkPath);
 chrome.contextMenus.onClicked.addListener(function(info, tabs) {
   if (tabs) {
-      if (info.menuItemId === "importdd"){
+      if (info.menuItemId === "importddcode"){
           chrome.tabs.query({ active: true }, function(tabs) {
-            const msg = "dd";
+            const msg = "ddcode";
             chrome.tabs.sendMessage(tabs[0].id, { "message": msg });    
           })
       }
-      if (info.menuItemId === "importmd"){
+      if (info.menuItemId === "importmdcode"){
         chrome.tabs.query({ active: true }, function(tabs) {
-          const msg = "md";
+          const msg = "mdcode";
           chrome.tabs.sendMessage(tabs[0].id, { "message": msg });    
         })
       }
+    if (info.menuItemId === "importddpr"){
+        chrome.tabs.query({ active: true }, function(tabs) {
+          const msg = "ddpr";
+          chrome.tabs.sendMessage(tabs[0].id, { "message": msg });    
+        })
+    }
+    if (info.menuItemId === "importmdpr"){
+      chrome.tabs.query({ active: true }, function(tabs) {
+        const msg = "mdpr";
+        chrome.tabs.sendMessage(tabs[0].id, { "message": msg });    
+      })
+    }
   }
 });

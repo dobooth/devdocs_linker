@@ -60,5 +60,7 @@ Selecting this menu, you can add either:
 
 - `@magento import code to magento-devdocs/devdocs` 
 - `@magento import code to magento-devdocs/merchdocs` 
+- `@magento import pr to magento-devdocs/devdocs` 
+- `@magento import pr to magento-devdocs/merchdocs` 
 
 to the text area.
