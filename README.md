@@ -1,8 +1,8 @@
-# Devdocs Linker
+# Adobe/Magento Linker
 
-This is a Chrome extension that opens relative Devdoc/Merchdoc links in a new browser tab.
+This is a Chrome extension that opens relative AdobeDocs and Magento doc links in a new browser tab.
 
-It looks at a selected string and if it is recognized as a devdocs/mercdocs path, you can use the "Open in Devdocs/Merchdocs" context menu to open the link.
+It looks at a selected string and if it is recognized as a devdocs/mercdocs/AdobeDocs path, you can use the "Open in Adobe/Magento" context menu to open the link.
 
 ## How to install
 
@@ -12,7 +12,7 @@ It looks at a selected string and if it is recognized as a devdocs/mercdocs path
 1. Click the 'Load Unpacked' button that appeared.
 1. Browse to the folder with the code and load it.
 
-The 'Devdocs Link Opener' should show in your extension list.
+The 'Adobe/Magento Link Opener' should show in your extension list.
 
 ## Recognized strings
 
@@ -51,6 +51,11 @@ Test your extension with these sample strings.
 - `{{ site.mage2bloburl }}` will always default to v2.4:
 
       {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php
+
+
+### AdobeDocs
+
+Version 0.4 adds link opening support for the PWA repo on AdobeDocs.
 
 ## @magento
 
