@@ -1,7 +1,7 @@
 {
-  "name": "Devdocs/Merchdocs Link Opener",
-  "description": "Opens Magento docs links from code selection. Also adds @magento import statements.",
-  "version": "0.3",
+  "name": "Adobe/Magento Link Opener",
+  "description": "Opens docs links from code selection. Also adds @magento import statements.",
+  "version": "0.4",
   "background": {
      "scripts": ["background.js"],
      "persistent": true
