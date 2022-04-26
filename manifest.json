@@ -3,8 +3,7 @@
   "description": "Opens docs links from code selection. Also adds @magento import statements.",
   "version": "0.4",
   "background": {
-     "scripts": ["background.js"],
-     "persistent": true
+     "service_worker": "background.js"
    },
    "content_scripts": [
     {
@@ -15,9 +14,10 @@
     "js": ["content.js"]
     }
 ], 
-  "permissions": ["tabs", "contextMenus", "https://*/"],
-  "browser_action": {
+  "optional_permissions": ["tabs", "contextMenus"],
+  "host_permissions": ["https://*/"],
+  "action": {
       "name": "Open context menu"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
